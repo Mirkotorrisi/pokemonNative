@@ -20,6 +20,9 @@ export default function HomeScreen() {
   const goDelete = () => {
     navigation.navigate("Delete");
   };
+  const goUpdate = () => {
+    navigation.navigate("Update");
+  };
   const handleBoost = () => {
     if (pokemonState.pokemon) dispatch(BoostPokemon(pokemonState.pokemon));
   };
@@ -54,7 +57,7 @@ export default function HomeScreen() {
         />
         <Text style={styles.stats}>
           {pokemonState.pokemon?.stats.map(
-            (stat) => stat.stat.name + " - " + stat.base_stat + "\n"
+            (stat) => "\n" + stat.stat.name + " - " + stat.base_stat
           )}
         </Text>
       </View>
@@ -75,7 +78,10 @@ export default function HomeScreen() {
           );
         })}
       </ScrollView>
-      <MyButton title="Delete" onPress={goDelete} />
+      <View style={styles.search}>
+        <MyButton title="Delete" onPress={goDelete} />
+        <MyButton title="Update" onPress={goUpdate} />
+      </View>
     </View>
   );
 }

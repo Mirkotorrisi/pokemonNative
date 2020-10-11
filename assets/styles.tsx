@@ -4,9 +4,23 @@ const styles = StyleSheet.create({
   textInput: {
     height: 40,
     width: 200,
-    marginTop: 10,
-    borderColor: "#FF6655",
+    borderColor: "#2a75bb",
     borderWidth: 3,
+    color: "#2a75bb",
+    borderRadius: 12,
+    paddingLeft: 15,
+    backgroundColor: "#c7a008",
+  },
+  search: {
+    backgroundColor: "#ffcb05",
+    fontFamily: "Pokemon Hollow",
+    borderColor: "#2a75bb",
+    borderWidth: 3,
+    borderRadius: 12,
+    width: "100%",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
   },
   pokemon: {
     width: 200,
@@ -17,6 +31,7 @@ const styles = StyleSheet.create({
     height: 100,
   },
   container: {
+    fontFamily: "Pokemon-Hollow",
     width: "100%",
     height: "100%",
     flex: 5,
@@ -27,7 +42,7 @@ const styles = StyleSheet.create({
 
   pokeContainer: {
     width: "100%",
-    flex: 1,
+    flex: 3,
     flexDirection: "row",
     justifyContent: "center",
   },
@@ -38,16 +53,18 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   stats: {
-    backgroundColor: "#FF6655",
+    backgroundColor: "#2a75bb",
+    fontFamily: "Roboto",
+    color: "white",
+    padding: 4,
+    borderRadius: 12,
   },
   pokemonSaved: {
-    backgroundColor: "#FF6655",
-    height: 0,
+    borderRadius: 12,
+    height: 10,
+    backgroundColor: "#2a75bb",
   },
-  search: {
-    flexDirection: "row",
-    justifyContent: "center",
-  },
+
   appButtonContainer: {
     borderRadius: 100,
     paddingVertical: 10,
@@ -63,7 +80,7 @@ const styles = StyleSheet.create({
     top: "60%",
     fontSize: 18,
     position: "absolute",
-    color: "#FF6655",
+    color: "#3c5aa6",
     fontWeight: "bold",
     alignSelf: "center",
     textTransform: "uppercase",

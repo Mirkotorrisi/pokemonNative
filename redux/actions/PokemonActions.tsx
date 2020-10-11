@@ -71,11 +71,13 @@ export const UpdatePokemon = (
   newPokemon: PokemonType,
   pokemonSaved: PokemonType[]
 ) => (dispatch: Dispatch<PokemonDispatchTypes>) => {
-  let newArr = [
-    ...pokemonSaved.filter((pokemon) => pokemon != pokemonToChange),
-  ];
-  dispatch({
-    type: POKEMON_UPDATED,
-    payload: [...newArr, newPokemon],
-  });
+  if (pokemonSaved.filter((pokemon) => pokemon == newPokemon).length == 0) {
+    let newArr = [
+      ...pokemonSaved.filter((pokemon) => pokemon != pokemonToChange),
+    ];
+    dispatch({
+      type: POKEMON_UPDATED,
+      payload: [...newArr, newPokemon],
+    });
+  }
 };

@@ -1,6 +1,6 @@
 import React from "react";
-import { GestureResponderEvent } from "react-native";
-import { TouchableOpacity, Text, Image } from "react-native";
+import { Animated, GestureResponderEvent, View } from "react-native";
+import { TouchableWithoutFeedback, Text, Image } from "react-native";
 
 import styles from "../assets/styles";
 
@@ -17,11 +17,41 @@ const MyButton: React.FC<IButtonProps> = ({
   onPress = () => {},
   ...props
 }) => {
+  const animatedValue = new Animated.Value(1);
+
+  const animatedStyle = { transform: [{ scale: animatedValue }] };
+
+  const handlePressIn = () => {
+    Animated.spring(animatedValue, {
+      toValue: 0.5,
+      useNativeDriver: true,
+    }).start();
+  };
+  const handlePressOut = () => {
+    Animated.spring(animatedValue, {
+      toValue: 1,
+      friction: 0,
+      tension: 40,
+      useNativeDriver: true,
+    }).start();
+  };
   return (
-    <TouchableOpacity onPress={onPress} style={styles.appButtonContainer}>
-      <Image source={require("../assets/pokeball.png")} style={styles.img} />
-      <Text style={styles.appButtonText}>{title}</Text>
-    </TouchableOpacity>
+    <TouchableWithoutFeedback
+      onPress={onPress}
+      onPressIn={handlePressIn}
+      onPressOut={handlePressOut}
+    >
+      <View style={styles.appButtonContainer}>
+        <Animated.Image
+          source={require("../assets/pokeball.png")}
+          style={[styles.img, animatedStyle]}
+        />
+        <Animated.Text style={[styles.appButtonText, animatedStyle]}>
+          {title}
+        </Animated.Text>
+      </View>
+    </TouchableWithoutFeedback>
   );
 };
+
 export default MyButton;

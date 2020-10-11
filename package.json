@@ -34,5 +34,10 @@
     "react-native-web": "~0.13.7",
     "typescript": "~3.9.5"
   },
-  "private": true
+  "private": true,
+  "rnpm": {
+    "assets": [
+      "./src/assets/fonts"
+    ]
+  }
 }
