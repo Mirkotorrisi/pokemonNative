@@ -1,6 +1,7 @@
 import DeleteScreen from '../screen/DeleteScreen';
 import HomeScreen from '../screen/HomeScreen';
-import UpdateScreen from '../screen/UpdateScreen'
+import UpdateScreen from '../screen/UpdateScreen';
+import CreditScreen from '../screen/CreditScreen';
 
 export const routes = [
     {
@@ -14,4 +15,9 @@ export const routes = [
     {
         name: "Update",
         component: UpdateScreen
-    }]
+    },
+    {
+        name: "Credits",
+        component: CreditScreen
+    },
+]

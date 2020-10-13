@@ -24,6 +24,9 @@ export default function HomeScreen() {
   const goUpdate = () => {
     navigation.navigate("Update");
   };
+  const goCredits = () => {
+    navigation.navigate("Credits");
+  };
   const handleBoost = () => {
     if (pokemonState.pokemon) dispatch(BoostPokemon(pokemonState.pokemon));
   };
@@ -88,6 +91,7 @@ export default function HomeScreen() {
           })}
         </ScrollView>
         <View style={styles.home__crudButtons}>
+          <CrudButton title="Credits" onPress={goCredits} />
           <CrudButton title="Delete" onPress={goDelete} />
           <CrudButton title="Update" onPress={goUpdate} />
         </View>

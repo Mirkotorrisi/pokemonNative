@@ -65,10 +65,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   home__crudButtons: {
-    backgroundColor: "#ffcb05",
-    borderColor: "#2a75bb",
-    borderWidth: 3,
-    borderRadius: 12,
+
     width: "30%",
 
     alignItems: "center",
@@ -125,10 +122,20 @@ const styles = StyleSheet.create({
   },
   crudButtonContainer: {
     borderRadius: 10,
+    borderColor: "#2222",
+
     paddingHorizontal: 12,
+    shadowColor: "#ffcb99",
     width: 100,
     height: 50,
-    backgroundColor: "#2a75bb",
+    backgroundColor: "#ffcb05",
+    paddingBottom: 25,
+    shadowOpacity: 0.8,
+    elevation: 6,
+    margin: 5,
+    shadowRadius: 5,
+    shadowOffset: { width: 156, height: 50 },
+    borderWidth: 2,
   },
   img: {
     width: "100%",
