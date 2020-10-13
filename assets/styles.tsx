@@ -1,37 +1,98 @@
 import { StyleSheet } from "react-native";
 
+
 const styles = StyleSheet.create({
-  textInput: {
+  home__container: {
+    backgroundColor: "#c7a008",
+    fontFamily: "PokemonSolidNormal",
+    width: "100%",
+    height: "100%",
+    flex: 5,
+    flexWrap: "wrap",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  home__search__textInput: {
     height: 40,
-    width: 200,
+    width: "70%",
     borderColor: "#2a75bb",
     borderWidth: 3,
     color: "#2a75bb",
-    borderRadius: 12,
+    fontFamily: "notoserif",
+
+    borderRadius: 10,
     paddingLeft: 15,
+    marginLeft: 10,
     backgroundColor: "#c7a008",
   },
-  search: {
+  home__search: {
     backgroundColor: "#ffcb05",
-    fontFamily: "Pokemon Hollow",
     borderColor: "#2a75bb",
     borderWidth: 3,
     borderRadius: 12,
     width: "100%",
     flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  home__main: {
+    width: "100%",
+    flex: 30,
+    flexDirection: "row",
+    alignItems: "flex-start",
+    justifyContent: "space-between",
+
+  },
+  home__pokeContainer: {
+    width: "100%",
+    flex: 3,
     justifyContent: "center",
+    borderColor: "#2a75bb",
+    borderWidth: 3,
+    borderRadius: 12,
+    zIndex: -1
+  },
+  home__pokemonName: {
+    fontSize: 40,
+    color: "#3c5aa6",
+    display: "flex",
+    borderRadius: 15,
+    borderColor: "#2a75bb",
+    backgroundColor: "#c7a008",
+    fontFamily: "PokemonHollowNormal",
+  },
+  home__footer: {
+    flexDirection: "row",
+  },
+  home__crudButtons: {
+    backgroundColor: "#ffcb05",
+    borderColor: "#2a75bb",
+    borderWidth: 3,
+    borderRadius: 12,
+    width: "30%",
+
     alignItems: "center",
   },
   pokemon: {
-    width: 200,
-    height: 200,
+    width: "80%",
+    height: "70%",
+    zIndex: 1
+  },
+  stats: {
+    backgroundColor: "#2a75bb",
+    fontFamily: "PokemonHollowNormal",
+    color: "white",
+    padding: 4,
+    borderRadius: 10,
+    zIndex: 2
   },
   pokemonTiny: {
     width: 100,
     height: 100,
+    zIndex: 5
   },
   container: {
-    fontFamily: "Pokemon-Hollow",
+    fontFamily: "PokemonHollowNormal",
     width: "100%",
     height: "100%",
     flex: 5,
@@ -40,29 +101,18 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 
-  pokeContainer: {
-    width: "100%",
-    flex: 3,
-    flexDirection: "row",
-    justifyContent: "center",
-  },
   buttons: {
     width: "100%",
     flex: 1,
-    flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "flex-end",
+    paddingRight: 15
   },
-  stats: {
-    backgroundColor: "#2a75bb",
-    fontFamily: "Roboto",
-    color: "white",
-    padding: 4,
-    borderRadius: 12,
-  },
+
   pokemonSaved: {
+    borderColor: "#2a75bb",
+    borderWidth: 3,
     borderRadius: 12,
-    height: 10,
-    backgroundColor: "#2a75bb",
+    zIndex: -5
   },
 
   appButtonContainer: {
@@ -71,6 +121,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     width: 100,
     height: 100,
+    paddingBottom: 20
+  },
+  crudButtonContainer: {
+    borderRadius: 10,
+    paddingHorizontal: 12,
+    width: 100,
+    height: 50,
+    backgroundColor: "#2a75bb",
   },
   img: {
     width: "100%",

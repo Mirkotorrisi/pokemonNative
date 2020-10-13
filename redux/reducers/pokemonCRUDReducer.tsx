@@ -24,7 +24,6 @@ const pokemonCRUDReducer = (state: DefaultStateType = defaultState, action: Poke
             return {
                 pokemonSaved: action.payload
             }
-
         default:
             return state;
     }

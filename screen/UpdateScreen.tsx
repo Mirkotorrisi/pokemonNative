@@ -1,14 +1,14 @@
 import { View, Image, TouchableOpacity } from "react-native";
-import { RootStore } from "./Store";
+import { RootStore } from "../Store";
 import { useSelector, useDispatch } from "react-redux";
 import React from "react";
-import MyButton from "./components/MyButton";
+import MyButton from "../components/MyButton";
 
-import { UpdatePokemon } from "./redux/actions/PokemonActions";
+import { UpdatePokemon } from "../redux/actions/PokemonActions";
 import { useNavigation } from "@react-navigation/native";
-import { PokemonType } from "./redux/actions/PokemonActionTypes";
+import { PokemonType } from "../redux/actions/PokemonActionTypes";
 
-import styles from "./assets/styles";
+import styles from "../assets/styles";
 
 export default function UpdateScreen() {
   const dispatch = useDispatch();

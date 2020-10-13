@@ -18,7 +18,6 @@ const pokemonReducer = (state: DefaultStateType = defaultState, action: PokemonD
             }
         case POKEMON_LOADING:
             console.log("POKEMON LOADING")
-
             return {
                 ...state.pokemon,
                 loading: true
