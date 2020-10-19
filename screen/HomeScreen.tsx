@@ -32,8 +32,8 @@ export default function HomeScreen() {
   const goUpdate = () => {
     navigation.navigate("Update");
   };
-  const goCredits = () => {
-    navigation.navigate("Credits");
+  const goWeb = () => {
+    navigation.navigate("Web");
   };
   const handleBoost = () => {
     if (pokemonState.pokemon) dispatch(BoostPokemon(pokemonState.pokemon));
@@ -126,10 +126,10 @@ export default function HomeScreen() {
             </ScrollView>
           </Animated.View>
 
-          <VerticalButton title={"POKDEX"} onPress={handleShowPokedex} />
+          <VerticalButton title={"POKEDEX"} onPress={handleShowPokedex} />
         </View>
         <View style={styles.home__footer__crudButtons}>
-          <CrudButton title="Credits" onPress={goCredits} />
+          <CrudButton title="Web" onPress={goWeb} />
           <CrudButton title="Delete" onPress={goDelete} />
           <CrudButton title="Update" onPress={goUpdate} />
         </View>
