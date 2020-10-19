@@ -1,16 +1,11 @@
 import { StyleSheet } from "react-native";
 
-
 const styles = StyleSheet.create({
   home__container: {
-    backgroundColor: "#c7a008",
+    backgroundColor: "#ffcb05",
     fontFamily: "PokemonSolidNormal",
     width: "100%",
     height: "100%",
-    flex: 5,
-    flexWrap: "wrap",
-    justifyContent: "center",
-    alignItems: "center",
   },
   home__search__textInput: {
     height: 40,
@@ -37,43 +32,61 @@ const styles = StyleSheet.create({
   },
   home__main: {
     width: "100%",
-    flex: 30,
+    flex: 1,
     flexDirection: "row",
     alignItems: "flex-start",
     justifyContent: "space-between",
-
   },
   home__pokeContainer: {
     width: "100%",
     flex: 3,
     justifyContent: "center",
-    borderColor: "#2a75bb",
-    borderWidth: 3,
     borderRadius: 12,
-    zIndex: -1
+    zIndex: -1,
+    shadowColor: "#ffdc54",
+    shadowOpacity: 1.8,
+    shadowRadius: 0.84,
+    elevation: 3,
+    shadowOffset: { width: 1, height: 5 },
   },
   home__pokemonName: {
     fontSize: 40,
     color: "#3c5aa6",
-    display: "flex",
-    borderRadius: 15,
+    borderRadius: 55,
     borderColor: "#2a75bb",
-    backgroundColor: "#c7a008",
+    backgroundColor: "#ffcb05",
     fontFamily: "PokemonHollowNormal",
   },
   home__footer: {
+    width: "100%",
+    flexDirection: "row",
+    alignItems: "flex-end",
+  },
+  home__footer__pokemonSaved: {
+    flex: 1,
+    margin: 0,
     flexDirection: "row",
   },
-  home__crudButtons: {
-
+  home__footer__pokemonSaved__list: {
+    zIndex: -5,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 5,
+      height: -5,
+    },
+    shadowOpacity: 0.8,
+    shadowRadius: 3.84,
+    elevation: 2,
+  },
+  home__footer__crudButtons: {
     width: "30%",
 
     alignItems: "center",
   },
   pokemon: {
-    width: "80%",
-    height: "70%",
-    zIndex: 1
+    transform: [{ translateY: 40 }, { translateX: -10 }],
+    height: "90%",
+    zIndex: 1,
   },
   stats: {
     backgroundColor: "#2a75bb",
@@ -81,18 +94,17 @@ const styles = StyleSheet.create({
     color: "white",
     padding: 4,
     borderRadius: 10,
-    zIndex: 2
+    zIndex: 2,
   },
   pokemonTiny: {
     width: 100,
     height: 100,
-    zIndex: 5
+    zIndex: 5,
   },
   container: {
     fontFamily: "PokemonHollowNormal",
     width: "100%",
     height: "100%",
-    flex: 5,
     flexWrap: "wrap",
     justifyContent: "center",
     alignItems: "center",
@@ -102,14 +114,7 @@ const styles = StyleSheet.create({
     width: "100%",
     flex: 1,
     justifyContent: "flex-end",
-    paddingRight: 15
-  },
-
-  pokemonSaved: {
-    borderColor: "#2a75bb",
-    borderWidth: 3,
-    borderRadius: 12,
-    zIndex: -5
+    paddingRight: 15,
   },
 
   appButtonContainer: {
@@ -118,24 +123,29 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     width: 100,
     height: 100,
-    paddingBottom: 20
+    paddingBottom: 20,
   },
   crudButtonContainer: {
     borderRadius: 10,
-    borderColor: "#2222",
-
+    borderColor: "#dbae00",
     paddingHorizontal: 12,
-    shadowColor: "#ffcb99",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 2,
+      height: 5,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
     width: 100,
     height: 50,
     backgroundColor: "#ffcb05",
     paddingBottom: 25,
-    shadowOpacity: 0.8,
-    elevation: 6,
     margin: 5,
-    shadowRadius: 5,
-    shadowOffset: { width: 156, height: 50 },
-    borderWidth: 2,
+    borderRightWidth: 0,
+    borderBottomWidth: 0,
+    borderLeftWidth: 2,
+    borderTopWidth: 2,
   },
   img: {
     width: "100%",
@@ -149,6 +159,23 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     alignSelf: "center",
     textTransform: "uppercase",
+  },
+  verticalButtonContainer: {
+    shadowRadius: 3.84,
+    margin: 0,
+    alignItems: "center",
+    minHeight: 90,
+    borderTopEndRadius: 14,
+    borderBottomEndRadius: 14,
+    shadowColor: "#3c5aa6",
+    backgroundColor: "#2a75bb",
+    shadowOpacity: 0.5,
+    elevation: 3,
+    shadowOffset: { width: 3, height: 2 },
+  },
+  verticalButtonText: {
+    color: "#ffcb05",
+    transform: [{ rotate: "90deg" }],
   },
 });
 export default styles;

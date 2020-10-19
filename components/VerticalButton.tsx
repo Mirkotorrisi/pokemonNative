@@ -11,7 +11,7 @@ export interface IButtonProps {
   title: string;
 }
 
-const CrudButton: React.FC<IButtonProps> = ({
+const VerticalButton: React.FC<IButtonProps> = ({
   children,
   title,
   onPress = () => {},
@@ -19,22 +19,17 @@ const CrudButton: React.FC<IButtonProps> = ({
 }) => {
   const animatedValue = new Animated.Value(1);
 
-  const animatedStyle = {
-    transform: [{ scale: animatedValue }],
-  };
-
   const handlePressIn = () => {
     Animated.spring(animatedValue, {
-      toValue: 0.8,
-      friction: 3,
+      toValue: 0.5,
       useNativeDriver: true,
     }).start();
   };
   const handlePressOut = () => {
     Animated.spring(animatedValue, {
       toValue: 1,
-      friction: 3,
-      tension: 0,
+      friction: 0,
+      tension: 40,
       useNativeDriver: true,
     }).start();
   };
@@ -44,13 +39,28 @@ const CrudButton: React.FC<IButtonProps> = ({
       onPressIn={handlePressIn}
       onPressOut={handlePressOut}
     >
-      <View style={styles.crudButtonContainer}>
-        <Animated.Text style={[styles.appButtonText, animatedStyle]}>
-          {title}
-        </Animated.Text>
-      </View>
+      <Animated.View style={styles.verticalButtonContainer}>
+        <View
+          style={{
+            flex: 1,
+            alignItems: "center",
+          }}
+        >
+          {/* fill space at the top */}
+          <View style={{ flex: 1, justifyContent: "flex-start" }} />
+
+          <View style={{ flex: 1 }}>
+            <Animated.Text style={[styles.verticalButtonText]}>
+              {title}
+            </Animated.Text>
+          </View>
+
+          {/* fill space at the bottom*/}
+          <View style={{ flex: 1, justifyContent: "flex-end" }} />
+        </View>
+      </Animated.View>
     </TouchableWithoutFeedback>
   );
 };
 
-export default CrudButton;
+export default VerticalButton;
