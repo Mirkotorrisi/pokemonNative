@@ -1,7 +1,7 @@
 import DeleteScreen from "../screen/DeleteScreen";
 import HomeScreen from "../screen/HomeScreen";
 import UpdateScreen from "../screen/UpdateScreen";
-import WebScreen from "../screen/WebScreen";
+import SubmitScreen from "../screen/SubmitScreen";
 
 export const routes = [
   {
@@ -17,7 +17,7 @@ export const routes = [
     component: UpdateScreen,
   },
   {
-    name: "Web",
-    component: WebScreen,
+    name: "Submit",
+    component: SubmitScreen,
   },
 ];

@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#ffcb05",
     borderColor: "#2a75bb",
     borderWidth: 3,
+    flex: 0.3,
     borderRadius: 12,
     width: "100%",
     flexDirection: "row",
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
   },
   home__footer__pokemonSaved: {
     flex: 1,
-    margin: 0,
+    marginTop: 20,
     flexDirection: "row",
   },
   home__footer__pokemonSaved__list: {
@@ -79,8 +80,9 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   home__footer__crudButtons: {
+    position: "absolute",
     width: "30%",
-
+    left: "70%",
     alignItems: "center",
   },
   pokemon: {
@@ -117,7 +119,7 @@ const styles = StyleSheet.create({
     paddingRight: 15,
   },
 
-  appButtonContainer: {
+  button___pokeBall__Container: {
     borderRadius: 100,
     paddingVertical: 10,
     paddingHorizontal: 12,
@@ -125,7 +127,10 @@ const styles = StyleSheet.create({
     height: 100,
     paddingBottom: 20,
   },
-  crudButtonContainer: {
+  button__switch: {
+    top: -60,
+  },
+  button___nav__Container: {
     borderRadius: 10,
     borderColor: "#dbae00",
     paddingHorizontal: 12,
@@ -151,7 +156,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
   },
-  appButtonText: {
+  button___pokeBall__Text: {
     top: "60%",
     fontSize: 18,
     position: "absolute",
@@ -160,11 +165,24 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     textTransform: "uppercase",
   },
-  verticalButtonContainer: {
+
+  button__list__container: {
+    backgroundColor: "#ffcb05",
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+    width: 150,
+    height: 50,
+  },
+  button__list__text: {
+    fontFamily: "PokemonSolidNormal",
+    fontSize: 20,
+    color: "#2a75bb",
+  },
+  button___vertical__Container: {
     shadowRadius: 3.84,
     margin: 0,
     alignItems: "center",
-    minHeight: 90,
     borderTopEndRadius: 14,
     borderBottomEndRadius: 14,
     shadowColor: "#3c5aa6",
@@ -173,9 +191,14 @@ const styles = StyleSheet.create({
     elevation: 3,
     shadowOffset: { width: 3, height: 2 },
   },
-  verticalButtonText: {
+  button___vertical__Text: {
     color: "#ffcb05",
     transform: [{ rotate: "90deg" }],
+  },
+  pokedex__list: {
+    display: "flex",
+    justifyContent: "center",
+    flex: 0.3,
   },
 });
 export default styles;

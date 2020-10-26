@@ -2,7 +2,7 @@ import { View, Image, TouchableOpacity } from "react-native";
 import { RootStore } from "../Store";
 import { useSelector, useDispatch } from "react-redux";
 import React from "react";
-import MyButton from "../components/MyButton";
+import PokeBallButton from "../components/buttons/PokeBallButton";
 
 import { UpdatePokemon } from "../redux/actions/PokemonActions";
 import { useNavigation } from "@react-navigation/native";
@@ -35,7 +35,7 @@ export default function UpdateScreen() {
 
   return (
     <>
-      <View style={styles.pokeContainer}>
+      <View style={styles.home__pokeContainer}>
         <Image
           style={styles.pokemon}
           source={{
@@ -58,7 +58,7 @@ export default function UpdateScreen() {
           );
         })}
       </View>
-      <MyButton title="Home" onPress={goHome} />
+      <PokeBallButton title="Home" onPress={goHome} />
     </>
   );
 }

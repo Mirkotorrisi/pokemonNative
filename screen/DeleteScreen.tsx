@@ -2,7 +2,7 @@ import { View, Image, TouchableOpacity } from "react-native";
 import { RootStore } from "../Store";
 import { useSelector, useDispatch } from "react-redux";
 import React from "react";
-import MyButton from "../components/MyButton";
+import PokeBallButton from "../components/buttons/PokeBallButton";
 
 import { DeletePokemon } from "../redux/actions/PokemonActions";
 import { useNavigation } from "@react-navigation/native";
@@ -42,7 +42,7 @@ export default function DeleteScreen() {
           );
         })}
       </View>
-      <MyButton title="Home" onPress={goHome} />
+      <PokeBallButton title="Home" onPress={goHome} />
     </>
   );
 }

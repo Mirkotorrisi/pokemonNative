@@ -2,7 +2,7 @@ import React from "react";
 import { Animated, GestureResponderEvent, View } from "react-native";
 import { TouchableWithoutFeedback, Text, Image } from "react-native";
 
-import styles from "../assets/styles";
+import styles from "../../assets/styles";
 
 export interface IButtonProps {
   children?: React.ReactNode;
@@ -11,7 +11,7 @@ export interface IButtonProps {
   title: string;
 }
 
-const CrudButton: React.FC<IButtonProps> = ({
+const ListButton: React.FC<IButtonProps> = ({
   children,
   title,
   onPress = () => {},
@@ -44,8 +44,8 @@ const CrudButton: React.FC<IButtonProps> = ({
       onPressIn={handlePressIn}
       onPressOut={handlePressOut}
     >
-      <View style={styles.crudButtonContainer}>
-        <Animated.Text style={[styles.appButtonText, animatedStyle]}>
+      <View style={styles.button__list__container}>
+        <Animated.Text style={[styles.button__list__text, animatedStyle]}>
           {title}
         </Animated.Text>
       </View>
@@ -53,4 +53,4 @@ const CrudButton: React.FC<IButtonProps> = ({
   );
 };
 
-export default CrudButton;
+export default ListButton;

@@ -2,7 +2,7 @@ import React from "react";
 import { Animated, GestureResponderEvent, View } from "react-native";
 import { TouchableWithoutFeedback, Text, Image } from "react-native";
 
-import styles from "../assets/styles";
+import styles from "../../assets/styles";
 
 export interface IButtonProps {
   children?: React.ReactNode;
@@ -11,13 +11,15 @@ export interface IButtonProps {
   title: string;
 }
 
-const VerticalButton: React.FC<IButtonProps> = ({
+const PokeBallButton: React.FC<IButtonProps> = ({
   children,
   title,
   onPress = () => {},
   ...props
 }) => {
   const animatedValue = new Animated.Value(1);
+
+  const animatedStyle = { transform: [{ scale: animatedValue }] };
 
   const handlePressIn = () => {
     Animated.spring(animatedValue, {
@@ -39,28 +41,17 @@ const VerticalButton: React.FC<IButtonProps> = ({
       onPressIn={handlePressIn}
       onPressOut={handlePressOut}
     >
-      <Animated.View style={styles.verticalButtonContainer}>
-        <View
-          style={{
-            flex: 1,
-            alignItems: "center",
-          }}
-        >
-          {/* fill space at the top */}
-          <View style={{ flex: 1, justifyContent: "flex-start" }} />
-
-          <View style={{ flex: 1 }}>
-            <Animated.Text style={[styles.verticalButtonText]}>
-              {title}
-            </Animated.Text>
-          </View>
-
-          {/* fill space at the bottom*/}
-          <View style={{ flex: 1, justifyContent: "flex-end" }} />
-        </View>
-      </Animated.View>
+      <View style={styles.button___pokeBall__Container}>
+        <Animated.Image
+          source={require("../../assets/pokeball.png")}
+          style={[styles.img, animatedStyle]}
+        />
+        <Animated.Text style={[styles.button___pokeBall__Text, animatedStyle]}>
+          {title}
+        </Animated.Text>
+      </View>
     </TouchableWithoutFeedback>
   );
 };
 
-export default VerticalButton;
+export default PokeBallButton;
