@@ -200,5 +200,34 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     flex: 0.3,
   },
+  team__container: {
+    backgroundColor: "#2a75bb",
+    marginVertical: 5,
+    width: "100%",
+  },
+  team__pokemons: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+  },
+  team__pokemon: {
+    display: "flex",
+    flexDirection: "column",
+  },
+  team__date: {
+    fontSize: 15,
+    fontStyle: "italic",
+    color: "#ffcb05",
+  },
+  team__user: {
+    fontSize: 20,
+
+    color: "#ffcb05",
+    fontFamily: "PokemonSolidNormal",
+  },
+  team__stat: {
+    fontSize: 10,
+    color: "#ffcb05",
+  },
 });
 export default styles;

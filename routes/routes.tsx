@@ -2,6 +2,7 @@ import DeleteScreen from "../screen/DeleteScreen";
 import HomeScreen from "../screen/HomeScreen";
 import UpdateScreen from "../screen/UpdateScreen";
 import SubmitScreen from "../screen/SubmitScreen";
+import TeamsScreen from "../screen/TeamsScreen";
 
 export const routes = [
   {
@@ -19,5 +20,9 @@ export const routes = [
   {
     name: "Submit",
     component: SubmitScreen,
+  },
+  {
+    name: "Teams",
+    component: TeamsScreen,
   },
 ];

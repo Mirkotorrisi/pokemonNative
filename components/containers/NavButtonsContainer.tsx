@@ -14,6 +14,9 @@ export default function NavButtonsContainer() {
   const goUpdate = () => {
     navigation.navigate("Update");
   };
+  const goTeams = () => {
+    navigation.navigate("Teams");
+  };
   const goSubmit = () => {
     if (pokemonSavedState.pokemonSaved.length !== 3) {
       Alert.alert(
@@ -32,6 +35,7 @@ export default function NavButtonsContainer() {
       <CrudButton title="Submit" onPress={goSubmit} />
       <CrudButton title="Delete" onPress={goDelete} />
       <CrudButton title="Update" onPress={goUpdate} />
+      <CrudButton title="Teams" onPress={goTeams} />
     </View>
   );
 }

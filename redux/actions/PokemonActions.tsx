@@ -7,6 +7,7 @@ import {
   POKEMON_SAVED,
   POKEMON_DELETED,
   POKEMON_UPDATED,
+  TEAM_LIST_SUCCESS,
   PokemonType,
 } from "./PokemonActionTypes";
 import axios from "axios";
@@ -23,6 +24,27 @@ export const GetPokemon = (pokemon: string) => async (
     const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
     dispatch({
       type: POKEMON_SUCCESS,
+      payload: res.data,
+    });
+  } catch (error) {
+    dispatch({
+      type: POKEMON_FAIL,
+    });
+  }
+};
+
+export const GetTeamList = () => async (
+  dispatch: Dispatch<PokemonDispatchTypes>
+) => {
+  try {
+    dispatch({
+      type: POKEMON_LOADING,
+    });
+    const res = await axios.get(
+      `http://pokemon-team-server.herokuapp.com/posts`
+    );
+    dispatch({
+      type: TEAM_LIST_SUCCESS,
       payload: res.data,
     });
   } catch (error) {
