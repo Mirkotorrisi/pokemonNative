@@ -1,4 +1,4 @@
-import { Switch, View } from "react-native";
+import { Button, Switch, View } from "react-native";
 import { RootStore } from "../Store";
 import { useSelector } from "react-redux";
 import React, { useState } from "react";
@@ -7,10 +7,9 @@ import styles from "../assets/styles";
 import PokeContainer from "../components/containers/PokeContainer";
 import Searchbar from "../components/field/Searchbar";
 import PokemonSavedContainer from "../components/containers/PokemonSavedContainer";
-import NavButtonsContainer from "../components/containers/NavButtonsContainer";
 import PokeList from "../components/field/PokeList";
 
-export default function HomeScreen() {
+export default function HomeScreen(props: any) {
   const pokemonState = useSelector((state: RootStore) => state.pokemon);
   const [listMode, setListMode] = useState(false);
   const toggleSwitch = () => setListMode((previousState) => !previousState);
@@ -28,8 +27,8 @@ export default function HomeScreen() {
       />
       <View style={styles.home__footer}>
         <PokemonSavedContainer />
-        <NavButtonsContainer />
       </View>
+      <Button onPress={() => props.navigation.openDrawer()} title="MENU" />
     </View>
   );
 }

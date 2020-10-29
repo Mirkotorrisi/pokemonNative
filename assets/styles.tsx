@@ -229,5 +229,64 @@ const styles = StyleSheet.create({
     fontSize: 10,
     color: "#ffcb05",
   },
+  ///////
+  //
+  ///
+  ///
+  //DRAWER-CONTENT STYLES
+  drawerContent: {
+    backgroundColor: "#ffcb05",
+    flex: 1,
+  },
+  drawerLink: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    marginVertical: 10,
+    paddingHorizontal: 20,
+    backgroundColor: "#2a75bb",
+    color: "white",
+  },
+  avatar: {
+    borderColor: "#ffcb05",
+    borderWidth: 5,
+  },
+  title: {
+    fontSize: 16,
+    marginTop: 3,
+    fontWeight: "bold",
+  },
+  caption: {
+    fontSize: 14,
+    lineHeight: 14,
+  },
+  row: {
+    marginTop: 20,
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  section: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginRight: 15,
+  },
+  paragraph: {
+    fontWeight: "bold",
+    marginRight: 3,
+  },
+  drawerSection: {
+    marginTop: 15,
+  },
+  bottomDrawerSection: {
+    marginBottom: 15,
+    borderTopColor: "#f4f4f4",
+    borderTopWidth: 1,
+  },
+  preference: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+  },
 });
 export default styles;
