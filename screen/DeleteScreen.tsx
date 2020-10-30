@@ -26,7 +26,7 @@ export default function DeleteScreen() {
   );
 
   return (
-    <>
+    <View style={styles.home__main}>
       <View style={styles.container}>
         {pokemonSavedState.pokemonSaved.map((newPokemon) => {
           return (
@@ -43,6 +43,6 @@ export default function DeleteScreen() {
         })}
       </View>
       <PokeBallButton title="Home" onPress={goHome} />
-    </>
+    </View>
   );
 }

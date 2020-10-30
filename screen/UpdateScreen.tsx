@@ -34,7 +34,7 @@ export default function UpdateScreen() {
   const pokemonState = useSelector((state: RootStore) => state.pokemon);
 
   return (
-    <>
+    <View style={styles.home__main}>
       <View style={styles.home__pokeContainer}>
         <Image
           style={styles.pokemon}
@@ -59,6 +59,6 @@ export default function UpdateScreen() {
         })}
       </View>
       <PokeBallButton title="Home" onPress={goHome} />
-    </>
+    </View>
   );
 }
