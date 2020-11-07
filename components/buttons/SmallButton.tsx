@@ -11,7 +11,7 @@ export interface IButtonProps {
   title: string;
 }
 
-const ListButton: React.FC<IButtonProps> = ({
+const CrudButton: React.FC<IButtonProps> = ({
   children,
   title,
   onPress = () => {},
@@ -44,8 +44,8 @@ const ListButton: React.FC<IButtonProps> = ({
       onPressIn={handlePressIn}
       onPressOut={handlePressOut}
     >
-      <View style={styles.button__list__container}>
-        <Animated.Text style={[styles.button__list__text, animatedStyle]}>
+      <View style={styles.button___small__Container}>
+        <Animated.Text style={[styles.button___small__text, animatedStyle]}>
           {title}
         </Animated.Text>
       </View>
@@ -53,4 +53,4 @@ const ListButton: React.FC<IButtonProps> = ({
   );
 };
 
-export default ListButton;
+export default CrudButton;

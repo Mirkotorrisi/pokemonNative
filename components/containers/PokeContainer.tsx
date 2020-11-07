@@ -2,9 +2,9 @@ import { View, Text, Image } from "react-native";
 import { RootStore } from "../../Store";
 import { useSelector, useDispatch } from "react-redux";
 import React from "react";
-import MyButton from "../buttons/PokeBallButton";
+import PokeBallButton from "../buttons/PokeBallButton";
 
-import { BoostPokemon, SavePokemon } from "../../redux/actions/PokemonActions";
+import { SavePokemon } from "../../redux/actions/PokemonActions";
 import styles from "../../assets/styles";
 
 export default function PokeContainer() {
@@ -13,9 +13,7 @@ export default function PokeContainer() {
   const pokemonSavedState = useSelector(
     (state: RootStore) => state.pokemonCRUD
   );
-  const handleBoost = () => {
-    if (pokemonState.pokemon) dispatch(BoostPokemon(pokemonState.pokemon));
-  };
+
   const handleSave = () => {
     if (pokemonState.pokemon)
       dispatch(
@@ -38,8 +36,7 @@ export default function PokeContainer() {
         </Text>
       </View>
       <View style={styles.buttons}>
-        <MyButton title="boost" onPress={handleBoost} />
-        <MyButton title="save" onPress={handleSave} />
+        <PokeBallButton title="save" onPress={handleSave} />
       </View>
     </View>
   );

@@ -3,7 +3,6 @@ export const POKEMON_FAIL = "POKEMON_FAIL";
 export const POKEMON_SUCCESS = "POKEMON_SUCCESS";
 export const TEAM_LIST_SUCCESS = "TEAM_LIST_SUCCESS";
 export const POKEMON_SAVED = "POKEMON_SAVED";
-export const POKEMON_UPDATED = "POKEMON_UPDATED";
 export const POKEMON_DELETED = "POKEMON_DELETED";
 
 export type TeamType = {
@@ -57,16 +56,11 @@ export interface PokemonDeleted {
   type: typeof POKEMON_DELETED;
   payload: PokemonType[];
 }
-export interface PokemonUpdated {
-  type: typeof POKEMON_UPDATED;
-  payload: PokemonType[];
-}
 
 export type PokemonDispatchTypes =
   | PokemonLoading
   | PokemonFail
   | PokemonSuccess
   | PokemonSaved
-  | PokemonUpdated
   | PokemonDeleted
   | TeamListSuccess;

@@ -9,14 +9,10 @@ import { useNavigation } from "@react-navigation/native";
 import { PokemonType } from "../redux/actions/PokemonActionTypes";
 
 import styles from "../assets/styles";
+import HeaderButton from "../components/buttons/HeaderButton";
 
-export default function DeleteScreen() {
+export default function DeleteScreen(props: any) {
   const dispatch = useDispatch();
-  const navigation = useNavigation();
-
-  const goHome = () => {
-    navigation.navigate("Home");
-  };
 
   const handleDelete = (pokemonToDel: PokemonType) => {
     dispatch(DeletePokemon(pokemonToDel, pokemonSavedState.pokemonSaved));
@@ -26,7 +22,9 @@ export default function DeleteScreen() {
   );
 
   return (
-    <View style={styles.home__main}>
+    <View style={styles.home__container}>
+      <HeaderButton navigation={props.navigation} />
+
       <View style={styles.container}>
         {pokemonSavedState.pokemonSaved.map((newPokemon) => {
           return (
@@ -42,7 +40,6 @@ export default function DeleteScreen() {
           );
         })}
       </View>
-      <PokeBallButton title="Home" onPress={goHome} />
     </View>
   );
 }

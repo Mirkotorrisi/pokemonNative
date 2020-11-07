@@ -1,21 +1,21 @@
 import DeleteScreen from "../screen/DeleteScreen";
 import HomeScreen from "../screen/HomeScreen";
-import UpdateScreen from "../screen/UpdateScreen";
 import SubmitScreen from "../screen/SubmitScreen";
 import TeamsScreen from "../screen/TeamsScreen";
+import PokedexScreen from "../screen/PokedexScreen";
 
 export const routes = [
   {
-    name: "Home",
+    name: "Search",
     component: HomeScreen,
+  },
+  {
+    name: "Pokedex",
+    component: PokedexScreen,
   },
   {
     name: "Delete",
     component: DeleteScreen,
-  },
-  {
-    name: "Update",
-    component: UpdateScreen,
   },
   {
     name: "Submit",

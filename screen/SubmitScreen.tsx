@@ -4,8 +4,12 @@ import React, { useState } from "react";
 
 import { WebView } from "react-native-webview";
 import CrudButton from "../components/buttons/CrudButton";
+import HeaderButton from "../components/buttons/HeaderButton";
+import { Alert, View } from "react-native";
+import PokemonSavedContainer from "../components/containers/PokemonSavedContainer";
+import styles from "../assets/styles";
 
-export default function SubmitScreen() {
+export default function SubmitScreen(props: any) {
   const [key, setkey] = useState(0);
   const [uri, setUri] = useState("https://pokemon-team-server.herokuapp.com/");
   const pokemonSavedState = useSelector(
@@ -40,40 +44,50 @@ export default function SubmitScreen() {
     }
   }
   const submitTeam = async () => {
-    const requestOptions = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        pokemon1: pokemonsToSend[0],
-        pokemon2: pokemonsToSend[1],
-        pokemon3: pokemonsToSend[2],
-      }),
-    };
-    await fetch(
-      "https://pokemon-team-server.herokuapp.com",
-      requestOptions
-    ).then((res) => {
-      if (res.status == 403) {
-        alert("Log in to submit your team!");
-        setUri(uri + "/login");
-      } else if (res.status == 405) {
-        alert(
-          "You already posted your team, delete it to post another one (All it's progress will be lost)"
-        );
-      } else {
-        setkey(key + 1);
-      }
-    });
+    if (pokemonSavedState.pokemonSaved.length !== 3) {
+      Alert.alert(
+        "Forbidden",
+        "U must have no more and no less than 3 pokemon saved"
+      );
+    } else {
+      const requestOptions = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          pokemon1: pokemonsToSend[0],
+          pokemon2: pokemonsToSend[1],
+          pokemon3: pokemonsToSend[2],
+        }),
+      };
+      await fetch(
+        "https://pokemon-team-server.herokuapp.com",
+        requestOptions
+      ).then((res) => {
+        if (res.status == 403) {
+          alert("Log in to submit your team!");
+          setUri(uri + "/login");
+        } else if (res.status == 405) {
+          alert(
+            "You already posted your team, delete it to post another one (All it's progress will be lost)"
+          );
+        } else {
+          setkey(key + 1);
+        }
+      });
+    }
   };
   return (
-    <>
-      <CrudButton onPress={submitTeam} title="Submit" />
+    <View style={styles.home__container}>
+      <HeaderButton navigation={props.navigation} />
+
+      <CrudButton onPress={submitTeam} title="Submit Your Team!" />
       <WebView
         key={key}
         source={{
           uri: uri,
         }}
       />
-    </>
+      <PokemonSavedContainer navigation={props.navigation} />
+    </View>
   );
 }

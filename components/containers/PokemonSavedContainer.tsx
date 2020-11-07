@@ -1,12 +1,20 @@
-import { View, ScrollView, Image, Animated } from "react-native";
+import {
+  View,
+  ScrollView,
+  Image,
+  Animated,
+  TouchableHighlight,
+} from "react-native";
 import { RootStore } from "../../Store";
 import { useSelector } from "react-redux";
 import React, { useRef, useState } from "react";
 
 import VerticalButton from "../../components/buttons/VerticalButton";
 import styles from "../../assets/styles";
+import { Ionicons } from "@expo/vector-icons";
+import { PokemonType } from "../../redux/actions/PokemonActionTypes";
 
-export default function PokemonSavedContainer() {
+export default function PokemonSavedContainer({ navigation }: any) {
   const pokemonSavedState = useSelector(
     (state: RootStore) => state.pokemonCRUD
   );
@@ -17,7 +25,7 @@ export default function PokemonSavedContainer() {
     setShowPokedex(!showPokedex);
     if (!showPokedex) {
       Animated.timing(actionBarX, {
-        toValue: 200,
+        toValue: 320,
         duration: 500,
         useNativeDriver: false,
       }).start();
@@ -39,11 +47,15 @@ export default function PokemonSavedContainer() {
         <ScrollView
           horizontal={true}
           style={[styles.home__footer__pokemonSaved__list]}
+          contentContainerStyle={{
+            alignItems: "center",
+            paddingRight: 15,
+          }}
         >
-          {pokemonSavedState.pokemonSaved.map((newPokemon: any) => {
+          {pokemonSavedState.pokemonSaved.map((newPokemon: PokemonType) => {
             return (
               <Image
-                key={pokemonSavedState.pokemonSaved.indexOf(newPokemon)}
+                key={newPokemon.sprites.front_default.substring(73)}
                 style={styles.pokemonTiny}
                 source={{
                   uri: `${newPokemon.sprites.front_default}`,
@@ -51,6 +63,9 @@ export default function PokemonSavedContainer() {
               />
             );
           })}
+          <TouchableHighlight onPress={() => navigation.navigate("Delete")}>
+            <Ionicons name={"ios-trash"} size={50} color={"#2a75bb"} />
+          </TouchableHighlight>
         </ScrollView>
       </Animated.View>
 
