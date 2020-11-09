@@ -912,3 +912,13 @@ export const galar = [
   "Spectrier",
   "Calyrex",
 ];
+const pokedex: { name: string }[] = [];
+
+const regions = [kanto, jhoto, hoenn, sinnoh, unova, kalos, alola, galar];
+for (const region of regions) {
+  for (const iterator of region) {
+    const obj = { name: iterator };
+    pokedex.push(obj);
+  }
+}
+export default pokedex;

@@ -15,8 +15,6 @@ const MySwipeable: React.FC<MySwipeProps> = ({
   pokeNumber,
   ...props
 }) => {
-  console.log(pokeNumber, pokeName);
-
   const renderLeftActions = () => {
     return <Animated.View></Animated.View>;
   };

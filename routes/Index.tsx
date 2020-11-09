@@ -12,7 +12,11 @@ export default function Index() {
       <Drawer.Navigator drawerContent={(props) => <DrawerContent {...props} />}>
         {routes.map((route) => {
           return (
-            <Drawer.Screen name={route.name} component={route.component} />
+            <Drawer.Screen
+              name={route.name}
+              component={route.component}
+              key={route.name}
+            />
           );
         })}
       </Drawer.Navigator>

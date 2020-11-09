@@ -4,34 +4,18 @@ import React, { useRef } from "react";
 import { FlatList } from "react-native";
 import styles from "../../assets/styles";
 import SmallButton from "../buttons/SmallButton";
-import {
-  kanto,
-  jhoto,
-  hoenn,
-  sinnoh,
-  unova,
-  kalos,
-  alola,
-  galar,
-} from "../../assets/pokemons";
+import pokedex from "../../assets/pokemons";
 import MySwipeable from "../buttons/MySwipeable";
 
 const PokeList = () => {
-  const pokedex: { name: string }[] = [];
-  const regions = [kanto, jhoto, hoenn, sinnoh, unova, kalos, alola, galar];
-  for (const region of regions) {
-    for (const iterator of region) {
-      const obj = { name: iterator };
-      pokedex.push(obj);
-    }
-  }
+  console.log("tutta la flatlist-----------------");
 
   const flatListRef = useRef<FlatList<{ name: string }>>(null);
   const scrollList = (index: number) => {
     if (flatListRef.current)
       flatListRef.current.scrollToIndex({ index: index });
   };
-  const keyExtractor = (item: any) => `${item.name}`;
+  const keyExtractor = (item: any) => `key-${item.name}`;
   const renderItem = (item: any) => {
     return (
       <MySwipeable pokeNumber={item.index + 1} pokeName={item.item.name} />
@@ -42,15 +26,15 @@ const PokeList = () => {
       <FlatList
         data={pokedex}
         ref={flatListRef}
-        keyExtractor={keyExtractor}
+        renderItem={renderItem}
+        keyExtractor={(item) => keyExtractor(item)}
         style={styles.pokedex__list__pokemons}
         onScrollToIndexFailed={() => alert("something went wrong")}
         getItemLayout={(data, index) => ({
-          length: 200,
+          length: 100,
           offset: 100 * index,
           index,
         })}
-        renderItem={renderItem}
       />
       <View style={{ flexDirection: "column", marginTop: 20 }}>
         <SmallButton onPress={() => scrollList(0)} title="Kanto" />
