@@ -226,6 +226,8 @@ const styles = StyleSheet.create({
     color: "#2a75bb",
   },
   pokedex__list: {
+    backgroundColor: "#2a75bb",
+
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",

@@ -1,15 +1,19 @@
 import { View } from "react-native";
 
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { FlatList } from "react-native";
-import styles from "../../assets/styles";
-import SmallButton from "../buttons/SmallButton";
-import pokedex from "../../assets/pokemons";
-import MySwipeable from "../buttons/MySwipeable";
+import styles from "../assets/styles";
+import SmallButton from "../components/buttons/SmallButton";
+import pokedex from "../assets/pokemons";
+import MySwipeable from "../components/buttons/MySwipeable";
 
-const PokeList = () => {
-  console.log("tutta la flatlist-----------------");
-
+const TabListScreen = () => {
+  useEffect(() => {
+    console.log("lista aperta");
+    return () => {
+      console.log("lista chiusa");
+    };
+  });
   const flatListRef = useRef<FlatList<{ name: string }>>(null);
   const scrollList = (index: number) => {
     if (flatListRef.current)
@@ -49,4 +53,4 @@ const PokeList = () => {
     </View>
   );
 };
-export default PokeList;
+export default TabListScreen;

@@ -3,10 +3,8 @@ import { Button, View } from "react-native";
 import React from "react";
 
 import styles from "../assets/styles";
-import PokeContainer from "../components/containers/PokeContainer";
-import Searchbar from "../components/field/Searchbar";
 import PokemonSavedContainer from "../components/containers/PokemonSavedContainer";
-import PokeList from "../components/field/PokeList";
+import PokeList from "./TabListScreen";
 import HeaderButton from "../components/buttons/HeaderButton";
 
 export default function HomeScreen(props: any) {
